@@ -5,11 +5,12 @@ function minimumBribes(q) {
         let minPositionValue = currentValue-2
         let maxPositionValue = currentValue+2
         let currentPosition = position + 1
-        if(currentPosition<minPositionValue || currentPosition>maxPositionValue){
+        
+        if(currentPosition<minPositionValue){
             result = 'Too chaotic';
             break;
-        } else {
-            result = 3;
+        } else if (currentValue > currentPosition) {
+            result = result + currentValue - currentPosition
         }
     }
     console.log(result)
